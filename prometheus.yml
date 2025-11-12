@@ -37,7 +37,7 @@ scrape_configs:
     static_configs:
       - targets: ['perp-dex-arb-staging.up.railway.app']
         labels:
-          strategy: 'perp_dex_arb'
+          strategy: 'perp_dex_arb_staging'
           environment: 'staging'
           deployment: 'railway'
     # Optional: Add basic auth if you add authentication later
