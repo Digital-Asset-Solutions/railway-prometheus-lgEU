@@ -33,13 +33,13 @@ scrape_configs:
   - job_name: 'perp-dex-arb-strategy-staging'
     scrape_interval: 10s  # Scrape every 10s for live trading metrics
     metrics_path: '/metrics'
-    scheme: 'http'  # Your Railway endpoint uses HTTPS
+    scheme: 'https'  # Your Railway endpoint uses HTTPS
     static_configs:
-      - targets: ['45.113.82.155:8788']
+      - targets: ['perp-dex-arb-staging.up.railway.app']
         labels:
           strategy: 'perp_dex_arb'
           environment: 'staging'
-          deployment: 'oneqode'
+          deployment: 'railway'
     # Optional: Add basic auth if you add authentication later
     # basic_auth:
     #   username: 'your-username'
