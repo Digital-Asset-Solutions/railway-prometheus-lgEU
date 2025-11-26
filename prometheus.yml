@@ -51,6 +51,17 @@ scrape_configs:
           strategy: 'perp_dex_arb_bis'
           environment: 'bis'
           deployment: 'railway'
+
+  - job_name: 'perp-dex-arb-strategy-4'
+    scrape_interval: 10s  # Scrape every 10s for live trading metrics
+    metrics_path: '/metrics'
+    scheme: 'https'  # Your Railway endpoint uses HTTPS
+    static_configs:
+      - targets: ['perp-dex-arb-d-ethereal-x-lighter-production-11df.up.railway.app']
+        labels:
+          strategy: 'perp_dex_arb_4'
+          environment: 'strategy-4'
+          deployment: 'railway'
     # Optional: Add basic auth if you add authentication later
     # basic_auth:
     #   username: 'your-username'
