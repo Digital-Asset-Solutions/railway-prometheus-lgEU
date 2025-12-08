@@ -18,9 +18,9 @@ scrape_configs:
   - job_name: 'perp-dex-arb-strategy'
     scrape_interval: 10s  # Scrape every 10s for live trading metrics
     metrics_path: '/metrics'
-    scheme: 'http'  # Your Railway endpoint uses HTTPS
+    scheme: 'https'  # Your Railway endpoint uses HTTPS
     static_configs:
-      - targets: ['45.113.82.155:8787']
+      - targets: ['perp-dex-arb-staging-main-production.up.railway.app']
         labels:
           strategy: 'perp_dex_arb'
           environment: 'production'
