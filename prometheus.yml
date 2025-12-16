@@ -75,6 +75,39 @@ scrape_configs:
           environment: 'strategy-5'
           deployment: 'railway'
 
+  - job_name: 'perp-dex-arb-strategy-6'
+    scrape_interval: 10s  # Scrape every 10s for live trading metrics
+    metrics_path: '/metrics'
+    scheme: 'https'  # Your Railway endpoint uses HTTPS
+    static_configs:
+      - targets: ['perp-dex-arb-6-ethereal-x-hyperliquid-production.up.railway.app']
+        labels:
+          strategy: 'perp_dex_arb_6'
+          environment: 'strategy-6'
+          deployment: 'railway'
+
+  - job_name: 'perp-dex-arb-strategy-7'
+    scrape_interval: 10s  # Scrape every 10s for live trading metrics
+    metrics_path: '/metrics'
+    scheme: 'http'  # Your Railway endpoint uses HTTPS
+    static_configs:
+      - targets: ['45.113.82.155:8788']
+        labels:
+          strategy: 'perp_dex_arb_7'
+          environment: 'strategy-7'
+          deployment: 'railway'
+
+  - job_name: 'perp-dex-arb-strategy-8'
+    scrape_interval: 10s  # Scrape every 10s for live trading metrics
+    metrics_path: '/metrics'
+    scheme: 'http'  # Your Railway endpoint uses HTTPS
+    static_configs:
+      - targets: ['45.113.82.155:8789']
+        labels:
+          strategy: 'perp_dex_arb_8'
+          environment: 'strategy-8'
+          deployment: 'railway'
+
 
   - job_name: 'kill-switch-main'
     scrape_interval: 10s  # Scrape every 10s for live trading metrics
@@ -129,5 +162,38 @@ scrape_configs:
         labels:
           strategy: 'kill_switch_5'
           environment: 'ks-5'
+          deployment: 'railway'
+
+  - job_name: 'kill-switch-6'
+    scrape_interval: 10s  # Scrape every 10s for live trading metrics
+    metrics_path: '/metrics'
+    scheme: 'https'  # Your Railway endpoint uses HTTPS
+    static_configs:
+      - targets: ['kill-switch-6-ethereal-x-hyperliquid-production.up.railway.app']
+        labels:
+          strategy: 'kill_switch_6'
+          environment: 'ks-6'
+          deployment: 'railway'
+  
+  - job_name: 'kill-switch-7'
+    scrape_interval: 10s  # Scrape every 10s for live trading metrics
+    metrics_path: '/metrics'
+    scheme: 'https'  # Your Railway endpoint uses HTTPS
+    static_configs:
+      - targets: ['kill-switch-4-lighter-x-hyena-production.up.railway.app']
+        labels:
+          strategy: 'kill_switch_7'
+          environment: 'ks-7'
+          deployment: 'railway'
+
+  - job_name: 'kill-switch-8'
+    scrape_interval: 10s  # Scrape every 10s for live trading metrics
+    metrics_path: '/metrics'
+    scheme: 'https'  # Your Railway endpoint uses HTTPS
+    static_configs:
+      - targets: ['kill-switch-8-nado-x-lighter-production.up.railway.app']
+        labels:
+          strategy: 'kill_switch_8'
+          environment: 'ks-8'
           deployment: 'railway'
 
